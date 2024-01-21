@@ -1,0 +1,40 @@
+<!-- login.component.html -->
+<div class="login-container">
+    <mat-card>
+      <mat-card-header>
+        <mat-card-title>Login</mat-card-title>
+      </mat-card-header>
+      <br>
+      <mat-card-content>
+        <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="login-form">
+          <mat-form-field appearance="fill">
+            <mat-label>Username</mat-label>
+            <input matInput type="text" formControlName="username" />
+  
+            <mat-error *ngIf="loginForm.get('username')?.invalid && loginForm.get('username')?.touched">
+              Username is required.
+            </mat-error>
+          </mat-form-field>
+  
+          <mat-form-field appearance="fill">
+            <mat-label>Password</mat-label>
+            <input matInput type="password" formControlName="password" />
+  
+            <mat-error *ngIf="loginForm.get('password')?.invalid && loginForm.get('password')?.touched">
+              Password is required.
+            </mat-error>
+          </mat-form-field>
+
+          <mat-error *ngIf="loginForm.getError('backend')">Invalid username or password.</mat-error>
+          <div>
+            <span>Don't have an account? </span>
+            <a routerLink="/auth/register">Register</a>
+          </div>
+          <br>
+          <div class="button-container">
+            <button mat-raised-button color="primary" type="submit" [disabled]="loginForm.invalid">Login</button>
+          </div>
+        </form>
+      </mat-card-content>
+    </mat-card>
+  </div>

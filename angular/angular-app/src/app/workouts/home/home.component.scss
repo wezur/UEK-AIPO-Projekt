@@ -1,0 +1,83 @@
+// /* styles.scss or home.component.scss */
+
+// .home-container {
+//     display: grid;
+//     grid-template-columns: 1fr 1fr 1fr 1fr;
+//     grid-template-rows: auto auto auto auto;
+//     gap: 16px;
+//     height: 100vh;
+//     padding: 16px;
+//     box-sizing: border-box;
+//   }
+  
+//   mat-card {
+//     width: 100%;
+//     height: 100%;
+//     box-sizing: border-box;
+//   }
+  
+//   .today-workouts,
+//   .this-week-workouts {
+//     height: 100%;
+//     grid-column: span 3;
+//     grid-row: span 2;
+//   }
+
+//   .profile-statistics {
+//     grid-row: span 4;
+//   }
+  
+//   mat-card-title {
+//     padding: 10px;
+//   }
+
+.home-container {
+    display: flex;
+    gap: 16px;
+    width: 100%;
+    height: 100%;
+}
+
+mat-card {
+    width: 100%;
+    height: 100%;
+    overflow-y: scroll;
+}
+
+mat-card-content {
+    height: 100%;
+
+}
+
+.workouts {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    padding: 16px;
+    width: 75%;
+    height: 100%;
+}
+
+.today-workouts,
+.this-week-workouts {
+    flex: 1;
+    height: 50%;
+}
+
+.profile-statistics {
+    width: 25%;
+    padding: 16px;
+}
+
+mat-card-title {
+    padding: 10px;
+}
+
+.workout-box-container {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    flex-wrap: wrap;
+    width: 100%;
+    height: 100%;
+}
